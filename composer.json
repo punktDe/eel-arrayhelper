@@ -1,0 +1,18 @@
+{
+    "description": "The package provides an array helper with additional methods",
+    "type": "neos-package",
+    "name": "punktde/eel-arrayhelper",
+    "require": {
+        "neos/eel": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PunktDe\\Eel\\ArrayHelper\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "PunktDe.Eel.ArrayHelper"
+        }
+    }
+}

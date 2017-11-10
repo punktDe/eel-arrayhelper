@@ -1,0 +1,4 @@
+Neos:
+  Fusion:
+    defaultContext:
+      PunktDe.Array: 'PunktDe\Eel\ArrayHelper\ArrayHelper'
