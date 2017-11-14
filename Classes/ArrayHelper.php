@@ -32,9 +32,50 @@ class ArrayHelper implements ProtectedContextAwareInterface
      * @param array $array
      * @return array
      */
-    public function ksort(array $array): array {
+    public function ksort(array $array): array
+    {
         \ksort($array);
         return $array;
+    }
+
+    /**
+     * This method extracts sub elements to the parent level.
+     *
+     * An input array of type:
+     * [
+     *  element1 => [
+     *    0 => 'value1'
+     *  ],
+     *  element2 => [
+     *    0 => 'value2'
+     *    1 => 'value3'
+     *  ],
+     *
+     * will be converted to:
+     * [
+     *    0 => 'value1'
+     *    1 => 'value2'
+     *    2 => 'value3'
+     * ]
+     *
+     * @param array $array
+     * @return array
+     */
+    public function extractSubElements(array $array): array
+    {
+        $resultArray = [];
+
+        foreach ($array as $element) {
+            if (is_array($element)) {
+                foreach ($element as $subElement) {
+                    $resultArray[] = $subElement;
+                }
+            } else {
+                $resultArray[] = $element;
+            }
+        }
+
+        return $resultArray;
     }
 
     /**
