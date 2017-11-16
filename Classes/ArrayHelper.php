@@ -38,6 +38,29 @@ class ArrayHelper implements ProtectedContextAwareInterface
         return $array;
     }
 
+
+    /**
+     * PHPs array_filter
+     *
+     * @param array $array
+     * @return array
+     */
+    public function arrayFilter(array $array): array
+    {
+        return array_filter($array);
+    }
+
+    /**
+     * Return array values
+     *
+     * @param array $array
+     * @return array
+     */
+    public function arrayValues(array $array): array
+    {
+        return array_values($array);
+    }
+
     /**
      * This method extracts sub elements to the parent level.
      *
@@ -59,16 +82,21 @@ class ArrayHelper implements ProtectedContextAwareInterface
      * ]
      *
      * @param array $array
+     * @param bool $preserveKeys
      * @return array
      */
-    public function extractSubElements(array $array): array
+    public function extractSubElements(array $array, bool $preserveKeys = false): array
     {
         $resultArray = [];
 
         foreach ($array as $element) {
             if (is_array($element)) {
-                foreach ($element as $subElement) {
-                    $resultArray[] = $subElement;
+                foreach ($element as $subKey => $subElement) {
+                    if ($preserveKeys) {
+                        $resultArray[$subKey] = $subElement;
+                    } else {
+                        $resultArray[] = $subElement;
+                    }
                 }
             } else {
                 $resultArray[] = $element;

@@ -2,6 +2,19 @@
 
 Provides the methods:
 
+**Sort by Key (ksort)**
+
+    attributes = Neos.Fusion:RawArray
+    attributes.@process.ksort = ${PunktDe.Array.ksort(value)}
+
+**Filter arrays (array_filter)**
+
+    attributes.@process.arrayFilter = ${PunktDe.Array.arrayFilter(value)}
+
+**Array values (array_values)**
+
+    attributes.@process.arrayValues = ${PunktDe.Array.arrayValues(value)}
+
 **Add a key/value pair to an array**:
 
 Can be used to add a value with a dynamic key
@@ -9,13 +22,7 @@ Can be used to add a value with a dynamic key
     attributes = Neos.Fusion:RawArray
     attributes.@process.addKV = ${PunktDe.Array.setKeyValue(value, 'key', 'value')}
     
-**Sort by Key**
-
-    attributes = Neos.Fusion:RawArray
-    attributes.@process.ksort = ${PunktDe.Array.ksort(value)}
-
-
-**Extract Sub Elemets***
+**Extract Sub Elements**
 
 This method extracts sub elements to the parent level.
     
