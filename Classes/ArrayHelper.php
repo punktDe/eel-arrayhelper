@@ -38,7 +38,6 @@ class ArrayHelper implements ProtectedContextAwareInterface
         return $array;
     }
 
-
     /**
      * PHPs array_filter
      *
@@ -59,6 +58,31 @@ class ArrayHelper implements ProtectedContextAwareInterface
     public function arrayValues(array $array): array
     {
         return array_values($array);
+    }
+
+    /**
+     * Join the given array recursively
+     * using the given glue string.
+     *
+     * @param array $array
+     * @param string $glue
+     * @return string
+     */
+    public function joinRecursive(array $array, string $glue): string
+    {
+        $result = '';
+
+        foreach ($array as $item) {
+            if (is_array($item)) {
+                $result .= $this->joinRecursive($item, $glue) . $glue;
+            } else {
+                $result .= $item . $glue;
+            }
+        }
+
+        $result = substr($result, 0, 0 - strlen($glue));
+
+        return $result;
     }
 
     /**
