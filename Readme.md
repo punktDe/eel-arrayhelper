@@ -1,6 +1,8 @@
 # Neos Eel helper for array handling
 
-Provides the methods:
+[![Latest Stable Version](https://poser.pugx.org/punktDe/eel-arrayhelper/v/stable)](https://packagist.org/packages/punktDe/eel-arrayhelper) [![Total Downloads](https://poser.pugx.org/punktDe/eel-arrayhelper/downloads)](https://packagist.org/packages/punktDe/eel-arrayhelper) [![License](https://poser.pugx.org/punktDe/eel-arrayhelper/license)](https://packagist.org/packages/punktDe/eel-arrayhelper)
+
+This packages provides the methods:
 
 **Sort by Key (ksort)**
 
@@ -52,3 +54,7 @@ will be converted to:
 The method counts elements of a given array or a countable object.
 
     count = ${PunktDe.Array.length(this.rawCollection)}
+
+## Sponsors & Contributors
+
+The development of this package is sponsored by [punkt.de GmbH](https://punkt.de/en).

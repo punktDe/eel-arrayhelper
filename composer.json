@@ -1,18 +1,19 @@
 {
-    "description": "The package provides an array helper with additional methods",
-    "type": "neos-package",
-    "name": "punktde/eel-arrayhelper",
-    "require": {
-        "neos/eel": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "PunktDe\\Eel\\ArrayHelper\\": "Classes/"
-        }
-    },
-    "extra": {
-        "neos": {
-            "package-key": "PunktDe.Eel.ArrayHelper"
-        }
+  "description": "The package provides an eel-helper with additional methods to work with arrays.",
+  "type": "neos-package",
+  "name": "punktde/eel-arrayhelper",
+  "license": "MIT",
+  "require": {
+    "neos/eel": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PunktDe\\Eel\\ArrayHelper\\": "Classes/"
     }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "PunktDe.Eel.ArrayHelper"
+    }
+  }
 }
