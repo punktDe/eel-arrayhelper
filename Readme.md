@@ -46,3 +46,9 @@ will be converted to:
         1 => 'value2'
         2 => 'value3'
     ]
+
+**Count elements (length)**
+
+The method counts elements of a given array or a countable object.
+
+    count = ${PunktDe.Array.length(this.rawCollection)}

@@ -131,6 +131,26 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * The method counts elements of a given array or countable object
+     *
+     * @param $countableObject
+     * @return int
+     * @throws \Exception
+     */
+    public function length($countableObject): int
+    {
+        if ($countableObject instanceof \Countable) {
+            return $countableObject->count();
+        }
+
+        if (is_array($countableObject)) {
+            return count($countableObject);
+        }
+
+        throw new \Exception('The given object was neither an array nor does it implement the Countable interface', 1529670013);
+    }
+
+    /**
      * @param string $methodName
      * @return bool
      */
