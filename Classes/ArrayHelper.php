@@ -151,6 +151,16 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param array $a
+     * @param array $b
+     * @return array
+     */
+    public function intersect(array $a, array $b): array
+    {
+        return call_user_func_array('array_intersect', func_get_args());
+    }
+
+    /**
      * @param string $methodName
      * @return bool
      */
