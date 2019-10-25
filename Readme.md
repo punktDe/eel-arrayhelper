@@ -2,6 +2,12 @@
 
 [![Latest Stable Version](https://poser.pugx.org/punktDe/eel-arrayhelper/v/stable)](https://packagist.org/packages/punktDe/eel-arrayhelper) [![Total Downloads](https://poser.pugx.org/punktDe/eel-arrayhelper/downloads)](https://packagist.org/packages/punktDe/eel-arrayhelper) [![License](https://poser.pugx.org/punktDe/eel-arrayhelper/license)](https://packagist.org/packages/punktDe/eel-arrayhelper)
 
+## Installation
+
+    composer require punktde/eel-arrayhelper
+
+## Usage
+
 This packages provides the methods:
 
 **Sort by Key (ksort)**
