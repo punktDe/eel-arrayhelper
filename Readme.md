@@ -61,9 +61,13 @@ The method counts elements of a given array or a countable object.
 
     count = ${PunktDe.Array.length(this.rawCollection)}
 
+**hasKey(array, key)**
+    
+    bool = ${PunktDe.Array.hasKey(array, key)}
+
 **getValueByPath(array, path)**
 
-Returns the value of a nested array by following the specifed path.
+Returns the value of a nested array by following the specified path.
 
     result = ${PunktDe.Array.getValueByPath(array, path)}
     

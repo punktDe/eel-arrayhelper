@@ -62,6 +62,16 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param array $array
+     * @param string $key
+     * @return bool
+     */
+    public function hasKey(array $array, string $key): bool
+    {
+        return isset($array[$key]);
+    }
+
+    /**
      * Join the given array recursively
      * using the given glue string.
      *
