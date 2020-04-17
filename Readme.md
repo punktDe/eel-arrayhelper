@@ -61,6 +61,18 @@ The method counts elements of a given array or a countable object.
 
     count = ${PunktDe.Array.length(this.rawCollection)}
 
+**getValueByPath(array, path)**
+
+Returns the value of a nested array by following the specifed path.
+
+    result = ${PunktDe.Array.getValueByPath(array, path)}
+    
+**setValueByPath(subject, path, value)**
+
+Sets the given value in a nested array or object by following the specified path.
+
+    array = ${PunktDe.Array.setValueByPath(subject, path, value)}
+
 ## Sponsors & Contributors
 
 The development of this package is sponsored by [punkt.de GmbH](https://punkt.de/en).
