@@ -23,6 +23,10 @@ This packages provides the methods:
 
     attributes.@process.arrayValues = ${PunktDe.Array.arrayValues(value)}
 
+**Array flip (array_flip)**
+
+    attributes.@process.arrayFlip = ${PunktDe.Array.arrayFlip(value)}
+
 **Add a key/value pair to an array**:
 
 Can be used to add a value with a dynamic key
@@ -64,6 +68,10 @@ The method counts elements of a given array or a countable object.
 **hasKey(array, key)**
     
     bool = ${PunktDe.Array.hasKey(array, key)}
+    
+**hasValue(array, key)**
+
+    bool = ${PunktDe.Array.hasValue(array, key)}
 
 **getValueByPath(array, path)**
 

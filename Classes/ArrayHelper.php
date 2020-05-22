@@ -12,13 +12,12 @@ use Neos\Utility\Arrays;
 
 class ArrayHelper implements ProtectedContextAwareInterface
 {
-
     /**
      * Adds a key / value pair to an array
      *
-     * @param array $array
-     * @param string $key
-     * @param $value
+     * @param array $array The array
+     * @param string $key The target key
+     * @param mixed $value The value
      * @return array
      */
     public function setKeyValue(array $array, string $key, $value): array
@@ -51,6 +50,15 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param array $array
+     * @return array
+     */
+    public function arrayFlip(array $array): array
+    {
+        return array_flip($array);
+    }
+
+    /**
      * Return array values
      *
      * @param array $array
@@ -69,6 +77,16 @@ class ArrayHelper implements ProtectedContextAwareInterface
     public function hasKey(array $array, string $key): bool
     {
         return isset($array[$key]);
+    }
+
+    /**
+     * @param array $array
+     * @param string $key
+     * @return bool
+     */
+    public function hasValue(array $array, string $key): bool
+    {
+        return in_array($key, $array);
     }
 
     /**
@@ -181,7 +199,7 @@ class ArrayHelper implements ProtectedContextAwareInterface
      */
     public function getValueByPath(array $array, $path)
     {
-         return Arrays::getValueByPath($array, $path);
+        return Arrays::getValueByPath($array, $path);
     }
 
     /**
