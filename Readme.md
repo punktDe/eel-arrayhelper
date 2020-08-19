@@ -33,25 +33,25 @@ Can be used to add a value with a dynamic key
 
     attributes = Neos.Fusion:RawArray
     attributes.@process.addKV = ${PunktDe.Array.setKeyValue(value, 'key', 'value')}
-    
+
 **Extract Sub Elements**
 
 This method extracts sub elements to the parent level.
-    
+
     @process.extractSubElements = ${PunktDe.Array.extractSubElements(value)}
-    
+
 An input array of type:
 
     [
     element1 => [
-        0 => 'value1' 
+        0 => 'value1'
     ],
     element2 => [
         0 => 'value2'
         1 => 'value3'
-    ],     
-    
-will be converted to: 
+    ],
+
+will be converted to:
 
     [
         0 => 'value1'
@@ -66,9 +66,9 @@ The method counts elements of a given array or a countable object.
     count = ${PunktDe.Array.length(this.rawCollection)}
 
 **hasKey(array, key)**
-    
+
     bool = ${PunktDe.Array.hasKey(array, key)}
-    
+
 **hasValue(array, key)**
 
     bool = ${PunktDe.Array.hasValue(array, key)}
@@ -78,12 +78,18 @@ The method counts elements of a given array or a countable object.
 Returns the value of a nested array by following the specified path.
 
     result = ${PunktDe.Array.getValueByPath(array, path)}
-    
+
 **setValueByPath(subject, path, value)**
 
 Sets the given value in a nested array or object by following the specified path.
 
     array = ${PunktDe.Array.setValueByPath(subject, path, value)}
+
+**unsetValue(key, array)**
+
+Unset the value for the given key
+
+    array = ${PunktDe.Array.unsetValue(key, array)}
 
 ## Sponsors & Contributors
 
