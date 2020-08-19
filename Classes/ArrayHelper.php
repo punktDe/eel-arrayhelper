@@ -217,6 +217,16 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * @param string|int $key
+     * @param array $array
+     * @return array
+     */
+    public function unsetValue($key, array $array) {
+        unset($array[$key]);
+        return $array;
+    }
+
+    /**
      * @param string $methodName
      * @return bool
      */
