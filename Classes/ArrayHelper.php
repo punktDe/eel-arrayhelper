@@ -39,6 +39,30 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * arrayToSort = [
+     *  ['subValueKey' => "bb"]
+     *  ['subValueKey' => "aa"]
+     * ]
+     *
+     * sorted = [
+     *  ['subValueKey' => "aa"]
+     *  ['subValueKey' => "bb"]
+     * ]
+     *
+     * @param array $array
+     * @param string $subValueKey
+     * @return array
+     */
+    public function sortBySubValue(array $array, string $subValueKey): array
+    {
+        uasort($array, static function (array $elementA, array $elementB) use ($subValueKey) {
+            return strcmp($elementA[$subValueKey], $elementB[$subValueKey]);
+        });
+
+        return $array;
+    }
+
+    /**
      * PHPs array_filter
      *
      * @param array $array

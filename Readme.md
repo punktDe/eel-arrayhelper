@@ -15,6 +15,21 @@ This packages provides the methods:
     attributes = Neos.Fusion:RawArray
     attributes.@process.ksort = ${PunktDe.Array.ksort(value)}
 
+**Sort by sub value**
+    
+      arrayToSort = [
+       ['subValueKey' => "bb"]
+       ['subValueKey' => "aa"]
+      ]
+     
+      sorted = [
+       ['subValueKey' => "aa"]
+       ['subValueKey' => "bb"]
+      ]
+ 
+    attributes.@process.sortBySubValue = ${PunktDe.Array.sortBySubValue(value, 'subValueKey')}
+
+
 **Filter arrays (array_filter)**
 
     attributes.@process.arrayFilter = ${PunktDe.Array.arrayFilter(value)}
