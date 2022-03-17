@@ -252,6 +252,53 @@ class ArrayHelper implements ProtectedContextAwareInterface
     }
 
     /**
+     * Method can be used to convert an array of type
+     * [
+     *      'element1' => [
+     *           'name' => 'theName1',
+     *           'group' => 'theGroup1',
+     *      ],
+     *      'element2' => [
+     *           'name' => 'theName2',
+     *           'group' => 'theGroup2',
+     *      ],
+     * ]
+     *
+     * into
+     *
+     * [
+     *   'theGroup1' => [
+     *      'element1' => [
+     *           'name' => 'theName1',
+     *           'group' => 'theGroup1',
+     *      ],
+     *  ],
+     *
+     *  'theGroup2' => [
+     *      'element2' => [
+     *           'name' => 'theName2',
+     *           'group' => 'theGroup2',
+     *      ],
+     *   ]
+     * ]
+     *
+     *
+     * @param array $subject
+     * @param string $keyPath
+     * @return array
+     */
+    public function groupByKey(array $subject, string $keyPath): array
+    {
+        $sortedArray = [];
+        foreach ($subject as $key => $value) {
+            $groupKey = Arrays::getValueByPath($value, $keyPath);
+            $sortedArray = Arrays::setValueByPath($sortedArray, $groupKey . '.' . $key, $value);
+        }
+        return $sortedArray;
+    }
+
+
+    /**
      * @param string $methodName
      * @return bool
      */
