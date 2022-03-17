@@ -74,6 +74,49 @@ will be converted to:
         2 => 'value3'
     ]
 
+**Group Elements**
+
+    @process.groupByKey = ${PunktDe.Array.groupByKey(value, 'group')}
+
+Method can be used to convert an array of type
+   
+     [
+         'element1' => [
+              'name' => 'theName1',
+              'group' => 'theGroup1',
+         ],
+         'element2' => [
+              'name' => 'theName2',
+              'group' => 'theGroup2',
+         ],
+         'element3' => [
+              'name' => 'theName2',
+              'group' => 'theGroup2',
+         ],
+    ]
+
+into
+
+    [
+      'theGroup1' => [
+         'element1' => [
+              'name' => 'theName1',
+              'group' => 'theGroup1',
+         ],
+     ],
+    
+     'theGroup2' => [
+         'element2' => [
+              'name' => 'theName2',
+              'group' => 'theGroup2',
+         ],
+         'element3' => [
+              'name' => 'theName2',
+              'group' => 'theGroup2',
+         ],
+       ]
+    ]
+
 **Count elements (length)**
 
 The method counts elements of a given array or a countable object.
